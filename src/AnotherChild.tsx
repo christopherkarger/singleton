@@ -1,8 +1,7 @@
-import { useSingletonHook } from "./hooks/singleton";
 import { useEvents } from "./hooks/useEvents";
 
 export const AnotherChild = () => {
-  const { test, setTest } = useSingletonHook(useEvents);
+  const { test, setTest } = useEvents();
 
   return (
     <div>

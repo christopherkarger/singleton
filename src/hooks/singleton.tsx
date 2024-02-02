@@ -11,7 +11,7 @@ export const SingletonHookProvider = memo(
   ({ hooks, children }: ISingletonHookProvider) => {
     if (hooks.some((item) => hooks.indexOf(item) !== hooks.lastIndexOf(item))) {
       throw new Error(
-        "There are multiple hooks with the same name, every hook const name must be unique"
+        "There are multiple hooks with the same name, every hook name must be unique"
       );
     }
 
@@ -27,7 +27,7 @@ export const SingletonHookProvider = memo(
 export function useSingletonHook<T = unknown>(useHook: () => T) {
   const value = useContext(Context);
 
-  const hook = value?.find((h) => h.id === useHook.name);
+  const hook = value?.find((h) => h.id === `${useHook.name}`);
   if (!hook) {
     throw new Error(`Hook not found with id: ${useHook.name}`);
   }

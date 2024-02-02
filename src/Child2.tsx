@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { useSingletonHook } from "./hooks/singleton";
 import { useUser } from "./hooks/useUser";
 
 export const Child2 = (props: { headline: string }) => {
-  const { user, test, setTest } = useSingletonHook(useUser);
+  const { user, test, setTest } = useUser();
 
   useEffect(() => {
     console.log("child2 - user is", user);

@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { AnotherChild } from "./AnotherChild";
 import { Child2 } from "./Child2";
-import { useSingletonHook } from "./hooks/singleton";
 import { useUser } from "./hooks/useUser";
 
 export const Child1 = () => {
-  const { user, test, setTest } = useSingletonHook(useUser);
+  const { user, test, setTest } = useUser();
   const [showChild2, setShowChild2] = useState(false);
 
   useEffect(() => {

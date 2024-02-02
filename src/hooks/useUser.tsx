@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useSingletonHook } from "./singleton";
 
-export const useUser = () => {
+export const useUserBody = () => {
   const [user, setUser] = useState<string>();
   const [test, setTest] = useState<number>(0);
 
@@ -14,3 +15,5 @@ export const useUser = () => {
     setTest,
   };
 };
+
+export const useUser = () => useSingletonHook(useUserBody);

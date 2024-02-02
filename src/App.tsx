@@ -1,12 +1,12 @@
 import "./App.css";
 import { Child1 } from "./Child1";
 import { SingletonHookProvider } from "./hooks/singleton";
-import { useEvents } from "./hooks/useEvents";
-import { useUser } from "./hooks/useUser";
+import { useEventsBody } from "./hooks/useEvents";
+import { useUserBody } from "./hooks/useUser";
 
 function App() {
   return (
-    <SingletonHookProvider hooks={[useUser, useEvents]}>
+    <SingletonHookProvider hooks={[useUserBody, useEventsBody]}>
       <Child1 />
     </SingletonHookProvider>
   );
