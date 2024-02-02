@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnotherChild } from "./AnotherChild";
 import { Child2 } from "./Child2";
 import { useSingletonHook } from "./hooks/singleton";
 import { useUser } from "./hooks/useUser";
@@ -27,13 +28,15 @@ export const Child1 = () => {
       <br />
       <br />
       <button type="button" onClick={() => setShowChild2(!showChild2)}>
-        Toggle Child3
+        Toggle Child
       </button>
 
       <br />
       <br />
 
-      {showChild2 && <Child2 headline="Child3" />}
+      {showChild2 && <AnotherChild />}
+
+      {/* {showChild2 && <Child2 headline="Child3" />} */}
     </div>
   );
 };
